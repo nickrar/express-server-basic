@@ -105,7 +105,7 @@ This is a basic proof of concept. Possible enhancements:
 - Implement authentication for the dashboard
 - Add real‑time WebSocket updates instead of polling every 2 seconds
 - Improve pattern detection with machine learning or more sophisticated rules
-- Add screenshot capture in a future
+- Add screenshot capture in future
 
 ## Disclaimer
 This server is part of an educational red‑team simulation.
