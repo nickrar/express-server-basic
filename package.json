@@ -1,0 +1,15 @@
+{
+  "name": "keylogger-c2-server",
+  "version": "1.0.0",
+  "description": "C2 server for keylogger simulation with pattern detection",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "danishlaid",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2"
+  }
+}
