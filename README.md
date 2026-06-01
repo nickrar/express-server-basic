@@ -39,6 +39,23 @@
 
 ## Quick Setup (Ubuntu)
 
+### 1. Deploy Your Linode Instance
+- Log into your Linode Dashboard and click the green Create button, selecting Linode.
+- Distribution: Choose the latest Ubuntu LTS version (e.g., Ubuntu 24.04 LTS or 22.04 LTS).
+- Region: Select a region closest to Kajang (such as Singapore) to ensure the lowest network latency.
+- Linode Plan: Choose a Compute plan depending on your needs. The Nanode 1GB is a great starting point for light projects and learning.
+- Root Password & SSH Keys: Set a strong root password. 
+= Add your local SSH public key for more secure access.
+= Click Create Linode at the bottom of the page.
+
+### 2. Connect to the Server
+- Once the server finishes provisioning, you will see its Public IPv4 address on the dashboard.
+- Open the Terminal (macOS/Linux) or PowerShell/Command Prompt (Windows) on your local machine.
+
+```bash
+ssh root@<your_server_ip>
+```
+
 Clone the repository and run the one‑command installer:
 
 ```bash
